@@ -1,0 +1,7 @@
+Since 2008, The New York Times has produced and published about 30000 videos:
+
+http://www.nytimes.com/video
+
+The URLs and other metadata for these videos are stored in a SQL database.  No geocoded data is stored here.  It's mainly just textual metadata such as headline, byline, summary, date published, etc.  (The gold standard of textual metadata is the video transcript, ie, the actual words spoken.  Few videos have a transcript because automatically generating one from the audio track is expensive and error-prone)  The textual metadata is submitted to a "concept extractor", which returns a standardized list of people, geographic areas, topics and titles.  These "tags" are applied as additional metadata to aid in searching.
+
+The geographic tags are just place names.  Of the 30000 videos, about 12000 of them had textual metadata that yield geographic tags.  About 1100 of those geographic tags were unique.  I submitted this list of unique tags to the Google Geocoding API, which standardizes the name and returns a lot of geometry information, as well as the geographic hierarchy (example: city -> county -> state ->  country) to which the place belongs.
