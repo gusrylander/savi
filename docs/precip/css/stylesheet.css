@@ -1,0 +1,238 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#map {
+  width: 100%;
+  height: 100%; 
+}
+
+#title {
+  background: #99c2dd;
+  height: 510px;
+  width: 230px;
+  opacity: 0.75;
+  top: 120px;
+  left: 8px;
+  padding: 5px;
+  position: absolute;
+  font-family: calibri; 
+}
+
+.h1 {
+  font-family: calibri; 
+  font-weight: bold;
+  font-size: x-large; 
+  color: #0D497C;
+}
+
+.credit {
+  font-size: 11px;
+}
+
+#dep {
+  border-radius: 50%;
+  border: 2px solid black;
+  height: 7px;
+  width: 7px;
+  display: inline-block;
+}
+
+#wta {
+  border-radius: 50%;
+  border: 2px solid white;
+  height: 7px;
+  width: 7px;
+  display: inline-block;
+}
+
+#legend {
+  background: white;
+  opacity: 0.7;
+  height: 180px;
+  width: 280px;
+  text-align: left;
+  bottom: 30px;
+  font-family: calibri;
+  font-size: 90%;
+  position: absolute;
+  right: 5px;
+  padding: 5px;
+  }
+
+#legend-content {
+  padding: 5px;
+  font-family: calibri;
+}
+
+.acceptable {
+  background: #1a9641;
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  display: inline-block;
+}
+
+.unacceptable {
+  background: #fdae61;
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  display: inline-block;
+}
+
+.unacceptable2 {
+  background: #d7191c;
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  display: inline-block;
+}
+
+.entero {
+  font-size: x-small;
+  padding: 0px;
+}
+
+.leaflet-popup {
+  color: #0D497C;
+  font-size: 16px;
+  font-family: calibri;
+  font-weight: bold;
+}
+
+.date {
+  font-size: 10px;
+  font-weight: normal;
+}
+
+#control-panel {
+  position: absolute;
+  width: 90%;
+  background:rgba(0,0,0,0.7);
+  z-index: 2;
+  opacity: 1;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+#control-panel > .row {
+  white-space: nowrap;
+  height: 90px;
+}
+
+#spinner {
+  margin-left: 450px;
+  margin-top: 10px;
+  color: #888;
+}
+
+#dropdown-container {
+  display: table-cell;
+  height: 90px;
+  padding-top: 10px;
+  text-align: center;
+  white-space: normal;
+}
+
+#dropdown-container .title {
+  color: #BBB;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+#chart {
+  display: table-cell;
+  white-space: normal;
+}
+
+select.years {
+  min-width: 80px;
+}
+
+svg {
+  float: left;
+  display: block;
+  margin-left: auto;
+  margin-right: 3%;
+  padding-top: 10px;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #888;
+}
+
+.x.axis2 line,
+.x.axis2 path {
+  visibility: hidden;
+  fill: none;
+  stroke: #000;
+}
+
+.y.axis2 line,
+.y.axis2 path {
+  fill: none;
+  stroke: #888;
+}
+
+.axis text {
+  fill: #AAA;
+  letter-spacing: 1px;
+  font: 11px sans-serif;
+}
+
+.axis2 text {
+  fill: #AAA;
+}
+
+.x.title {
+  fill: #AAA;
+}
+
+.bar {
+	fill: #81B7DB;
+	stroke: #81B7DB;
+  shape-rendering: crispEdges;
+}
+
+.brush .extent {
+  fill-opacity: .25;
+  shape-rendering: crispEdges;
+}
+
+.precipitation {
+  font-family: calibri; 
+  font-weight: bold;
+  font-size: large; 
+  color: #0D497C;
+  margin-top: 20px;
+  margin-left: 20px;
+  display:none;
+}
+
+.precipitation_subtitle {
+  height: 20px;
+  font-family: calibri; 
+  font-weight: bold;
+  font-size: medium; 
+  color: #0D497C;
+  margin-left: 20px;
+  display:none;
+}
+
+.brush .selection {
+  stroke: #CCC;
+  stroke-width: 2px;
+}
+
+.brush .overlay {
+  pointer-events: none;
+}
+
+

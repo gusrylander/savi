@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  	<title>Open Sewer Atlas</title>
+
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+      
+    <!-- Load Leaflet from CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+
+    <link rel="stylesheet" href="css/example-styles.css">
+
+    <!-- geocoder plugin - load after Leaflet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-geocoder-mapzen/1.4.1/leaflet-geocoder-mapzen.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-geocoder-mapzen/1.4.1/leaflet-geocoder-mapzen.js"></script>
+
+    <!-- d3 libraries for chart -->
+	  <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="js/lib/d3-tip/index.js"></script>
+     
+    <!--mustache for template-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
+    
+  	<!-- cartodb -->
+  	<link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+  	<script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- select2 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
+    <script src="https://use.fontawesome.com/37f46472b2.js"></script>
+    
+	  <link type="text/css" rel="stylesheet" href="js/lib/weather-icons/css/weather-icons.min.css"/>
+
+    <!--my script -->
+    <link type="text/css" rel="stylesheet" href="css/stylesheet.css"/>
+    <script type="text/javascript" src="js/util.js"></script>
+    <script type="text/javascript" src="js/noaa.js"></script>
+    <script type="text/javascript" src="js/chart.js"></script>
+    <script type="text/javascript" src="js/map.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+  <body>
+    <div id="control-panel" class="container-fluid">
+      <div class="row">
+        <div id="dropdown-container" class="col-md-2">
+          <div class="title">Precipitation (inches)</div>
+          <select class="years"></select>
+        </div>
+        <div id="chart" class="col-md-10"></div>
+      </div>
+    </div>
+    <div id="map"> </div>
+    <div id="title">
+      <div class="h1"> New York Harbor Water Quality Results </div>
+        This map shows water quality results for Enterococcus, a sewage-indicating bacteria. Results are from NYC Department of Environmental Protection <a href="http://www.nyc.gov/html/dep/html/harborwater/harbor_water_sampling_results.shtml">Harbor Survey</a> <span id="dep"></span> and <a href="http://www.nycwatertrail.org/">NYC Water Trail Association</a> <span id="wta"></span>, a group of citizen scientists. DEP tests 90 sites monthly from November to April, and weekly from May to October. NYCWTA tests around 50 sites weekly from May to October.<p></p>
+        <p> Use the slider in the precipation chart to see weekly water quality results and the dropdown menu to change years. Precipitation data come from NOAA's JFK weather station.</p>
+        <div class="credit"> This map is a project of <a href="http://www.openseweratlas.tumblr.com">Open Sewer Atlas NYC</a> through the support of <a href="http://www.soilandwater.nyc">NYC Soil &amp Water Conservation District</a> and the generous volunteer technical assistance of Gus Rylander and <a href="https://www.pratt.edu/pratt-research-and-centers/spatial-analysis-visualization-initiative/">SAVI</a> class instruction of Eric Brelsford. </div>
+      </div>
+    <div id="dateSlider"></div>
+    <div id='legend'>
+        <div id='legend-content'>
+        <strong>NYC Deptarment of Health's Water Quality Standards for Swimming</strong>
+        <p></p>
+        <div><span class='acceptable'></span>Acceptable: less than 35 colonies</div>
+        <div><span class='unacceptable'></span>Unacceptable if levels persist: 35-104 colonies</div>
+        <div><span class='unacceptable2'></span>Unacceptable: more than 104 colonies</div>
+        <p></p>
+        <div><span class='entero'>This is the estimated count of Enterococcus colonies for a 100 milliliter water sample. Their presence indicates possible fecal pollution.</span></div>
+        </div>
+      </div>
+    <div class="precipitation"></div>
+    <div class="precipitation_subtitle"></div>
+      <script id="template" type="x-tmpl-mustache">
+      {{sampler}}'s water sample showed an estimated count of {{enterococcus}} colonies of Enterococcus per 100 milliliters of water sampled.
+        <div class='date'>Site: {{site_name}};  Date: {{date}}</div></p>
+      </script>
+  </body>
+</html>
