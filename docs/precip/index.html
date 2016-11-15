@@ -67,30 +67,14 @@
         <div id="chart" class="col-md-10"></div>
       </div>
     </div>
-    <div id="map"> </div>
-    <div id="title">
-      <div class="h1"> New York Harbor Water Quality Results </div>
-        This map shows water quality results for Enterococcus, a sewage-indicating bacteria. Results are from NYC Department of Environmental Protection <a href="http://www.nyc.gov/html/dep/html/harborwater/harbor_water_sampling_results.shtml">Harbor Survey</a> <span id="dep"></span> and <a href="http://www.nycwatertrail.org/">NYC Water Trail Association</a> <span id="wta"></span>, a group of citizen scientists. DEP tests 90 sites monthly from November to April, and weekly from May to October. NYCWTA tests around 50 sites weekly from May to October.<p></p>
-        <p> Use the slider in the precipation chart to see weekly water quality results and the dropdown menu to change years. Precipitation data come from NOAA's JFK weather station.</p>
-        <div class="credit"> This map is a project of <a href="http://www.openseweratlas.tumblr.com">Open Sewer Atlas NYC</a> through the support of <a href="http://www.soilandwater.nyc">NYC Soil &amp Water Conservation District</a> and the generous volunteer technical assistance of Gus Rylander and <a href="https://www.pratt.edu/pratt-research-and-centers/spatial-analysis-visualization-initiative/">SAVI</a> class instruction of Eric Brelsford. </div>
-      </div>
+    <div id="map" style="display:none"> </div>
+    <div id="title"> </div>
     <div id="dateSlider"></div>
     <div id='legend'>
         <div id='legend-content'>
-        <strong>NYC Deptarment of Health's Water Quality Standards for Swimming</strong>
-        <p></p>
-        <div><span class='acceptable'></span>Acceptable: less than 35 colonies</div>
-        <div><span class='unacceptable'></span>Unacceptable if levels persist: 35-104 colonies</div>
-        <div><span class='unacceptable2'></span>Unacceptable: more than 104 colonies</div>
-        <p></p>
-        <div><span class='entero'>This is the estimated count of Enterococcus colonies for a 100 milliliter water sample. Their presence indicates possible fecal pollution.</span></div>
         </div>
       </div>
     <div class="precipitation"></div>
     <div class="precipitation_subtitle"></div>
-      <script id="template" type="x-tmpl-mustache">
-      {{sampler}}'s water sample showed an estimated count of {{enterococcus}} colonies of Enterococcus per 100 milliliters of water sampled.
-        <div class='date'>Site: {{site_name}};  Date: {{date}}</div></p>
-      </script>
   </body>
 </html>
