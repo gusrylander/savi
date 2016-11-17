@@ -80,7 +80,7 @@ var checkCashingCustomStuff = L.geoJson(null, {
     onEachFeature: checkCashingInteraction
 });
 
-var checkCashingLayer = omnivore.csv('../CheckCashing.csv', null, checkCashingCustomStuff);
+var checkCashingLayer = omnivore.csv('CheckCashing.csv', null, checkCashingCustomStuff);
 
 map.addLayer(CartoDBTiles);
 map.addLayer(checkCashingLayer);
