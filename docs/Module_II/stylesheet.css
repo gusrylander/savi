@@ -1,4 +1,8 @@
-#mapid { width: 600px; height: 600px; }
+#mapid { 
+	width: 90%; 
+	height: 900px; 
+	margin: auto;
+}
 
 .legend {
 	line-height: 18px;
@@ -19,4 +23,28 @@
 
 .circle {
 	background-color: #909090;
+}
+
+.static_text {
+	position: absolute;
+	display: inline-block;
+	z-index: 1000;
+	font-family: Arial;
+	font-weight: bold;
+	color: rgba(0,0,0,0.6);
+	text-shadow: white 0.1em 0.1em 0.2em
+}
+
+.title {
+	top: 100px;
+	left: 100px;
+	font-size: 3em;
+}
+
+.subtitle {
+	top: 150px;
+	left: 100px;
+	font-size: 1em;
+	font-style: italic;
+	font-weight: normal;
 }
