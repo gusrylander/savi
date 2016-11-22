@@ -88,7 +88,7 @@ var NOAA = function() {
 
                 console.log(e);
 
-                $.ajax({
+                $.getJSON({
                     url: NOAA["URL"],
                     type: "GET",
                     data: noaaPayload(dateRange),
