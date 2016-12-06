@@ -1,0 +1,159 @@
+var utilitySteamMain = {
+   "type": "FeatureCollection",
+   "features": [
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.96292570462641,40.75830818098281 ]
+    },
+    "properties": {
+    "Incident Type":"Utility-Steam Main",
+    "Location":"East 57th Street & 1st Avenue",
+    "Borough":"Manhattan",
+    "time":"03/26/2015 09:14:00 PM",
+    "Closed Date":"03/27/2015 10:33:19 AM"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.96292570462641,40.75830818098281 ]
+    },
+    "properties": {
+    "Incident Type":"Utility-Steam Main",
+    "Location":"East 57 Street & 1st Avenue",
+    "Borough":"Manhattan",
+    "time":"03/26/2015 08:34:18 PM",
+    "Closed Date":"03/27/2015 11:03:50 AM"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.01313257566434,40.70753270034354 ]
+    },
+    "properties": {
+    "Incident Type":"Utility-Steam Main",
+    "Location":"46 Trinity Place",
+    "Borough":"Manhattan",
+    "time":"07/29/2011 12:28:21 PM",
+    "Closed Date":"07/29/2011 08:21:53 PM"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.96706540302519,40.766667180962024 ]
+    },
+    "properties": {
+    "Incident Type":"Utility-Steam Main",
+    "Location":"East 65 Street & Park Avenue",
+    "Borough":"Manhattan",
+    "time":"08/04/2011 01:55:48 AM",
+    "Closed Date":"08/09/2011 10:22:11 AM"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.97748177083902,40.75203196771056 ]
+    },
+    "properties": {
+    "Incident Type":"Utility-Steam Main",
+    "Location":"125 Park Ave",
+    "Borough":"Manhattan",
+    "time":"10/30/2011 03:21:11 AM",
+    "Closed Date":"10/30/2011 11:58:29 AM"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.95398496911393,40.778821892538616 ]
+    },
+    "properties": {
+    "Incident Type":"Utility-Steam Main",
+    "Location":"East 86th Street & 3rd Avenue",
+    "Borough":"Manhattan",
+    "time":"12/04/2012 01:14:39 PM",
+    "Closed Date":"12/05/2012 12:37:00 PM"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.00609860896282,40.714430432219785 ]
+    },
+    "properties": {
+    "Incident Type":"Utility-Steam Main",
+    "Location":"820 Madison Avenue",
+    "Borough":"Manhattan",
+    "time":"03/22/2015 10:18:04 PM",
+    "Closed Date":"03/24/2015 08:48:44 AM"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.97236318160728,40.76228796529624 ]
+    },
+    "properties": {
+    "Incident Type":"Utility-Steam Main",
+    "Location":"E 57 Street & Madison Avenue",
+    "Borough":"Manhattan",
+    "time":"05/08/2015 06:35:52 AM",
+    "Closed Date":"05/09/2015 12:33:49 AM"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.00739380153583,40.70518369395744 ]
+    },
+    "properties": {
+    "Incident Type":"Utility-Steam Main",
+    "Location":"Wall Street & Water Street",
+    "Borough":"Manhattan",
+    "time":"06/17/2015 07:13:33 PM",
+    "Closed Date":"06/17/2015 08:04:46 PM"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.9767048540364,40.764995240943655 ]
+    },
+    "properties": {
+    "Incident Type":"Utility-Steam Main",
+    "Location":"West 58 Street & 6 Avenue",
+    "Borough":"Manhattan",
+    "time":"04/11/2016 09:53:34 AM",
+    "Closed Date":"04/13/2016 08:45:38 PM"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.96254609596876,40.77863286157369 ]
+    },
+    "properties": {
+    "Incident Type":"Utility-Steam Main",
+    "Location":"1000 5 Ave",
+    "Borough":"Manhattan",
+    "time":"03/19/2013 05:04:05 PM",
+    "Closed Date":"03/19/2013 05:52:12 PM"
+    }
+  }
+]
+}
