@@ -7,10 +7,14 @@ var Map = function() {
 			"DATE_QUERY": "SELECT MIN(date),MAX(date) FROM all_sites_all_years",
 			"ENTERO_QUERY": "SELECT MIN(enterococcus),MAX(enterococcus) FROM all_sites_all_years"
 		},
-		BASEMAP_URL = 'https://api.mapbox.com/styles/v1/korin/cinyy74g70000aeni866flide/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoia29yaW4iLCJhIjoiY2luOWozYmYxMDBjdXYwa3ZxMnU4dm03MyJ9.Wcbx4hHyTfxP_GAan6jIKw',
+		BASEMAP_URL = 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+		//BASEMAP_URL = 'https://api.mapbox.com/styles/v1/korin/cinyy74g70000aeni866flide/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoia29yaW4iLCJhIjoiY2luOWozYmYxMDBjdXYwa3ZxMnU4dm03MyJ9.Wcbx4hHyTfxP_GAan6jIKw',
 		ATTRIBUTION = '&copy; <a href=https://www.mapbox.com/about/maps/>Mapbox</a> &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+		LANDSAT_URL = "https://api.mapbox.com/v4/gusrylander.1jayexs8/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZ3VzcnlsYW5kZXIiLCJhIjoiY2lwbHE3NmtiMDJlbnRsbWRyNDk4N253aSJ9.yfEtZyLIva5HE-yhUnAY9w",
 		leafletMap,
 		dataLayer,
+		landsat8,
+		landsat8Layer,
 		util;
 
 	// given start and end dates, return WHERE clause for carto sql query
@@ -32,7 +36,7 @@ var Map = function() {
 	var initialize = function() {
 
 		util = Util();
-					
+
 		// NYC-centered map
 		leafletMap = L.map('map', {
 			zoomControl: false
@@ -44,6 +48,10 @@ var Map = function() {
 			maxZoom: 18
 		}).addTo(leafletMap);
 
+		landsat8 = Landsat8();
+		landsat8Layer = L.tileLayer("");
+			//.addTo(leafletMap);
+						
 		//mapzen geocoder
 		L.control.geocoder('search-xBMCfMW', {
 			position: 'topright'
@@ -99,12 +107,30 @@ var Map = function() {
 
 	}
 
+	var updateLandsat8Layer = function(url) {
+		if (! leafletMap.hasLayer(landsat8Layer)) {
+			console.log("adding layer ... should happen once!");
+			leafletMap.addLayer(landsat8Layer);
+		}
+		if (url) {
+			landsat8Layer.setUrl(url);
+			landsat8Layer.setOpacity(1);
+		} else {
+			landsat8Layer.setOpacity(0);
+		}
+	}
+
 	// render map
 	var render = function(dates) {
+
+		var landsat8Url;
 
 		if (typeof dates === "undefined") {
 			return;
 		}
+
+		landsat8Url = landsat8.getTileWithin(dates[0], dates[1]);
+		updateLandsat8Layer(landsat8Url);
 
 		dates = dates.map(function(d){return util.formattedDate(d, '-')});
 		
@@ -169,6 +195,7 @@ var Map = function() {
     	initialize: initialize,
     	getDateRange: getDateRange,
     	getEnteroRange: getEnteroRange,
+    	updateLandsat8Layer: updateLandsat8Layer,
     	render: render
     }
 

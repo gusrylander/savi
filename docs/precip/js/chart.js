@@ -8,6 +8,11 @@ var Chart = function() {
 		brush,
 		context,
 		util;
+
+	var dayOfYear = function(date) {
+		var	formatDayOfYear = d3.timeFormat("%j");
+		return formatDayOfYear(date);
+	}
 	
 	// return formatted dates for x axis
 	var dayOfMonth = function (date) {
@@ -62,8 +67,13 @@ var Chart = function() {
 	// handle release of brush (aka "slider"): update the map with the selected dates
 	var brushend = function(renderMap) {
 
+		var currentTileUrl;
+
 		currentSelection = d3.event.selection.map(x.invert);
 		currentWeek = currentSelection.map(d3.timeWeek.round);
+		//currentTileUrl = landsat8.getTileWithin(currentWeek[0], currentWeek[1]);
+		//console.log(currentTileUrl);
+
 		renderMap([currentWeek[0], currentWeek[1]]);
 
 	}
@@ -108,7 +118,7 @@ var Chart = function() {
 			dateStr = data.map( function(d) {return util.formattedDate2(d, " ")}).join("-");
 			precip = getPrecipStats(data);
 		} else {
-			dateStr = util.formattedDate2(new Date(data.date), " ");
+			dateStr = util.formattedDate2(new Date(data.date), " ") + " (" + dayOfYear(new Date(data.date)) + ")";
 			precip = {total: data.value, nDays: 1}
 		}
 
@@ -202,7 +212,6 @@ var Chart = function() {
 		context = svg.append("g")
 		.attr("class", "context")
 		.attr("transform", "translate(" + margin.left + "," + 0 + ")");
-
 	}
 
 	// given preceip data, a callback to render map when dates change, and initial dates, render the chart
