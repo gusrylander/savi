@@ -1,0 +1,39 @@
+{
+  "name": "leaflet.sync",
+  "version": "0.0.5",
+  "description": "Sync two or more Leaflet map instances",
+  "main": "L.Map.Sync.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "lint": "eslint L.Map.Sync.js examples/* test/*",
+    "spec": "phantomjs ./node_modules/mocha-phantomjs-core/mocha-phantomjs-core.js test/index.html",
+    "test": "npm run lint && npm run spec",
+    "release": "mversion patch -m"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/turban/Leaflet.Sync.git"
+  },
+  "keywords": [
+    "Leaflet",
+    "map",
+    "geo",
+    "sync"
+  ],
+  "devDependencies": {
+    "chai": "~3.5.0",
+    "chai-leaflet": "0.0.12",
+    "eslint": "^2.10.2",
+    "eslint-plugin-html": "^1.4.0",
+    "leaflet": "~1.0.0-rc.1",
+    "mocha": "^2.4.5",
+    "mocha-phantomjs-core": "^2.0.1",
+    "phantomjs-prebuilt": "^2.1.4",
+    "mversion": "^1.10.0"
+  },
+  "author": "Bjorn Sandvik",
+  "contributors": [{"name":"Bails Pierre", "email":"bails@getredbird.com"}],
+  "readmeFilename": "README.md"
+}
