@@ -108,14 +108,19 @@ var Map = function() {
 
 	var updateLandsat8Layer = function(url) {
 		if (! leafletMap.hasLayer(landsat8Layer)) {
-			console.log("adding layer ... should happen once!");
 			leafletMap.addLayer(landsat8Layer);
 		}
 		if (url) {
 			landsat8Layer.setUrl(url);
 			landsat8Layer.setOpacity(1);
+			$("#without_data").hide()
+			$("#with_data").show();
+			$("#algaeheader").show();
 		} else {
 			landsat8Layer.setOpacity(0);
+			$("#with_data").hide();
+			$("#without_data").show();
+			$("#algaeheader").hide();
 		}
 	}
 

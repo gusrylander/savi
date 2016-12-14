@@ -71,11 +71,7 @@ var Chart = function() {
 
 		currentSelection = d3.event.selection.map(x.invert);
 		currentWeek = currentSelection.map(d3.timeWeek.round);
-		//currentTileUrl = landsat8.getTileWithin(currentWeek[0], currentWeek[1]);
-		//console.log(currentTileUrl);
-
 		renderMap([currentWeek[0], currentWeek[1]]);
-
 	}
 	
 	// display title
