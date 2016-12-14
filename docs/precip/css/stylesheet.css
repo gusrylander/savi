@@ -260,7 +260,7 @@ svg {
 	font-weight: bold;
 	color: rgba(0,0,0,0.6);
 	text-shadow: white 0.1em 0.1em 0.2em;	
-	width: 200px;
+	width: 220px;
 	border: 2px solid white;
 }
 
@@ -275,7 +275,7 @@ svg {
 
 .ramp {
 	background: -webkit-linear-gradient(left, #0205ce 0%,#fcfcfc 50%,#fcfcfc 50%,#fcfcfc 50%,#ffffff 50%,#41a048 100%);	/*background: linear-gradient(90deg, #0720e3, #21cc18);*/
-	width: 180px;
+	width: 200px;
 	height: 20px;
 }
 
@@ -284,7 +284,7 @@ svg {
 }
 
 #with_data .labels {
-	width: 180px;
+	width: 200px;
 }
 
 #with_data .labels .low {
@@ -346,5 +346,13 @@ svg {
 
 .landsat .header {
   font-size: 1.25em;
+  color: #000000;
+}
+
+table {
+  color: #000000;
+}
+
+.labels {
   color: #000000;
 }
