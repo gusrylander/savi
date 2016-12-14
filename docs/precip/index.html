@@ -62,7 +62,51 @@
 </head>
 
   <body>
-    <div id="control-panel" class="container-fluid">
+	
+   <div id='maptitle'>Precipitation and Water Quality in the NYC Estuary</div>
+
+	<div id="maplegend" class="basemap_water">
+		
+		<div id="maplegendtitle">Water Quality Indicators</div>
+
+		<div class="sites">
+			<div class="header">Presence of Bacteria</div>
+			<table>
+				<tr>
+					<th></th>
+					<th>DEP</th>
+					<th>NYCWTA</th>
+				</tr>
+				<tr>
+					<th>Low</th>
+					<td><div class="green dep circle"></div></td>
+					<td><div class="green nycwta circle"></div></td>
+				</tr>
+				<tr>
+					<th>Medium</th>
+					<td><div class="yellow dep circle"></div></td>
+					<td><div class="yellow nycwta circle"></div></td>
+				</tr>
+				<tr>
+					<th>High</th>
+					<td><div class="red dep circle"></div></td>
+					<td><div class="red nycwta circle"></div></td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="landsat">
+			<div class="header">Presence of Algae (Maybe!)</div>
+			<div id="without_data" class="hide">No Landsat 8 imagery this week</div>
+			<div id="with_data">
+				<div class="ramp"></div>
+				<div class="labels"><span class="left">Lower</span><span class="right">Higher</span></div>
+			</div>
+		</div>
+
+	</div>
+
+   <div id="control-panel" class="container-fluid">
       <div class="row">
         <div id="dropdown-container" class="col-md-2">
           <div class="title">Precipitation (inches)</div>
@@ -76,5 +120,5 @@
       {{sampler}}'s water sample showed an estimated count of {{enterococcus}} colonies of Enterococcus per 100 milliliters of water sampled.
         <div class='date'>Site: {{site_name}};  Date: {{date}}</div></p>
       </script>
-  </body>
+ </body>
 </html>

@@ -10,7 +10,6 @@ var Map = function() {
 		BASEMAP_URL = 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
 		//BASEMAP_URL = 'https://api.mapbox.com/styles/v1/korin/cinyy74g70000aeni866flide/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoia29yaW4iLCJhIjoiY2luOWozYmYxMDBjdXYwa3ZxMnU4dm03MyJ9.Wcbx4hHyTfxP_GAan6jIKw',
 		ATTRIBUTION = '&copy; <a href=https://www.mapbox.com/about/maps/>Mapbox</a> &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
-		LANDSAT_URL = "https://api.mapbox.com/v4/gusrylander.1jayexs8/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZ3VzcnlsYW5kZXIiLCJhIjoiY2lwbHE3NmtiMDJlbnRsbWRyNDk4N253aSJ9.yfEtZyLIva5HE-yhUnAY9w",
 		leafletMap,
 		dataLayer,
 		landsat8,
@@ -40,7 +39,7 @@ var Map = function() {
 		// NYC-centered map
 		leafletMap = L.map('map', {
 			zoomControl: false
-		}).setView([40.731649, -73.977814], 11);
+		}).setView([40.731649, -73.977814], 10);
 
 		// baselayer
 		L.tileLayer(BASEMAP_URL, {
@@ -166,7 +165,7 @@ var Map = function() {
 						radius: 5,
 						stroke: true,
 						color: 'black',
-						weight: 3
+						weight: 2
 					};
 					//conditional to outline based on source
 					if (feature.properties.sampler == 'NYCWTA') {

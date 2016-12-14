@@ -235,4 +235,116 @@ svg {
   pointer-events: none;
 }
 
+#maptitle{
+	top: 110px;
+	left: 10px;
+	font-size: 2em;
+	position: absolute;
+	display: inline-block;
+	z-index: 1000;
+	font-family: Arial;
+	font-weight: bold;
+	color: rgba(0,0,0,0.6);
+	text-shadow: white 0.1em 0.1em 0.2em;
+}
 
+#maplegend {
+	top: 160px;
+	left: 10px;
+	font-size: 0.75em;
+	padding: 10px;
+	position: absolute;
+	display: inline-block;
+	z-index: 1000;
+	font-family: Arial;
+	font-weight: bold;
+	color: rgba(0,0,0,0.6);
+	text-shadow: white 0.1em 0.1em 0.2em;	
+	width: 200px;
+	border: 2px solid white;
+}
+
+#maplegend .sites {
+	margin-bottom: 20px;
+}
+
+#maplegendtitle {
+  font-size: 1.5em;
+  color: #000000;
+}
+
+.ramp {
+	background: -webkit-linear-gradient(left, #0205ce 0%,#fcfcfc 50%,#fcfcfc 50%,#fcfcfc 50%,#ffffff 50%,#41a048 100%);	/*background: linear-gradient(90deg, #0720e3, #21cc18);*/
+	width: 180px;
+	height: 20px;
+}
+
+.hide {
+	display:none;
+}
+
+#with_data .labels {
+	width: 180px;
+}
+
+#with_data .labels .low {
+	float: left;
+}
+
+#with_data .labels .high {
+	float: right;
+}
+
+.circle {
+	border-radius: 50%;
+	width: 14px;
+	height: 14px; 
+}
+
+.dep {
+	border: 2px solid black;
+}
+
+.nycwta {
+	border: 2px solid white;
+}
+
+.green {
+	background-color: #1a9641;
+}
+
+.yellow {
+	background-color: #fdae61;
+}
+
+.red {
+	background-color: #d7191c;	
+}
+
+.basemap_water {
+	background-color: #cdd2d4;
+}
+
+.ramp {
+	border: 1px solid white;	
+}
+
+.left {
+	position: relative;
+	float: left;
+}
+
+.right {
+	position: relative;
+	float: right;
+}
+
+.sites .header {
+  font-size: 1.25em;
+  color: #000000;
+}
+
+.landsat .header {
+  font-size: 1.25em;
+  color: #000000;
+}

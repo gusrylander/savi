@@ -1,7 +1,7 @@
 var Landsat8 = function() {
 
 	var BASE_URL = "https://api.mapbox.com/v4/",
-		TILE_PATH = "/{z}/{x}/{y}.png/",
+		TILE_PATH = "/{z}/{x}/{y}.png",
 		ACCESS_TOKEN_QUERY = "?access_token=pk.eyJ1IjoiZ3VzcnlsYW5kZXIiLCJhIjoiY2lwbHE3NmtiMDJlbnRsbWRyNDk4N253aSJ9.yfEtZyLIva5HE-yhUnAY9w",
 		getUrl,
 		tileIds = {
