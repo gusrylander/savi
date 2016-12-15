@@ -8,8 +8,13 @@ var Map = function() {
 			"ENTERO_QUERY": "SELECT MIN(enterococcus),MAX(enterococcus) FROM all_sites_all_years"
 		},
 		BASEMAP_URL = 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
-		//BASEMAP_URL = 'https://api.mapbox.com/styles/v1/korin/cinyy74g70000aeni866flide/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoia29yaW4iLCJhIjoiY2luOWozYmYxMDBjdXYwa3ZxMnU4dm03MyJ9.Wcbx4hHyTfxP_GAan6jIKw',
-		ATTRIBUTION = '&copy; <a href=https://www.mapbox.com/about/maps/>Mapbox</a> &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+		ATTRIBUTION =
+			" Landsat Data: <a href=http://landsat.gsfc.nasa.gov/>NASA/USGS</a>" +
+			" | Precipitation Data: <a href=http://www.noaa.gov/>NOAA</a>" +
+			" | Water Quality Site Samples: <a href=http://www.nyc.gov/html/dep/html/home/home.shtml>NYCDEP</a>/<a href=http://www.nycwatertrail.org/>NYCWTA</a>" +
+			" | Basemaps: <a href=https://carto.com/>Carto</a>" +
+			" | Landsat Map Tiling:  <a href=https://www.mapbox.com/>Mapbox</a>" +
+			" | Design and Coding: Korin Tangtrakul (<a href=http://openseweratlas.tumblr.com/>OSA</a>), <a href=https://www.gusrylander.com/>Gus Rylander</a>",
 		leafletMap,
 		dataLayer,
 		landsat8,
@@ -49,12 +54,13 @@ var Map = function() {
 
 		landsat8 = Landsat8();
 		landsat8Layer = L.tileLayer("");
-			//.addTo(leafletMap);
 						
 		//mapzen geocoder
+		/*
 		L.control.geocoder('search-xBMCfMW', {
 			position: 'topright'
 		}).addTo(leafletMap);
+		*/
 
 		new L.Control.Zoom({
 			position: 'topright'
